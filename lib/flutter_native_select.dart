@@ -1,7 +1,14 @@
-library flutter_native_select;
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
+import 'dart:async';
+
+import 'package:flutter/services.dart';
+
+class FlutterNativeSelect {
+  static const MethodChannel _channel =
+      const MethodChannel('flutter_native_select');
+
+  static Future<String?> get platformVersion async {
+    final String? version = await _channel.invokeMethod('getPlatformVersion');
+    return version;
+  }
 }
