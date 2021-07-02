@@ -52,7 +52,7 @@ void showSelect() async {
 The upper code produces dialogs which are looking like that:
 
 ### iOS
-![iOS screenshot](docs/screenshot_ios.png)
+![iOS screenshot](doc/screenshot_ios.png)
 
 ### Android
-![Android screenshot](docs/screenshot_android.png)
+![Android screenshot](doc/screenshot_android.png)
