@@ -22,7 +22,7 @@ void main() {
     channel.setMockMethodCallHandler(null);
   });
 
-  test('check for duplicated items', () {
+  test('expect to fail, when duplicated items exists', () {
     expect(
         () => FlutterNativeSelect.openSelect(items: [
               NativeSelectItem(value: 'item', label: ''),
@@ -31,7 +31,7 @@ void main() {
         throwsAssertionError);
   });
 
-  test('check that default is is an actual item', () {
+  test('expect to fail, when the default value is not one of the items', () {
     expect(
         () => FlutterNativeSelect.openSelect(
               items: [
@@ -39,6 +39,20 @@ void main() {
               ],
               defaultValue: 'missing',
             ),
+        throwsAssertionError);
+  });
+
+  test('expect to fail, when no items are given', () {
+    expect(
+        () => FlutterNativeSelect.openSelect(items: []), throwsAssertionError);
+  });
+
+  test('expect to fail, when all items are disabled', () {
+    expect(
+        () => FlutterNativeSelect.openSelect(items: [
+              NativeSelectItem(value: 'item0', label: '', disabled: true),
+              NativeSelectItem(value: 'item1', label: '', disabled: true)
+            ]),
         throwsAssertionError);
   });
 
