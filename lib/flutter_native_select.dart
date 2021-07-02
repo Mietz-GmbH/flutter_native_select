@@ -32,6 +32,9 @@ class FlutterNativeSelect {
     /** Android only */
     String? title,
   }) {
+    assert(items.isNotEmpty, 'Items must not be empty!');
+    assert(items.any((element) => !element.disabled),
+        'Not all items must be disabled!');
     assert(items.map((e) => e.value).toSet().length == items.length,
         'Values in select items must be unique!');
     assert(
