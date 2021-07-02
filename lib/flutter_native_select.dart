@@ -24,9 +24,13 @@ class FlutterNativeSelect {
 
   static Future<String?> openSelect({
     required List<NativeSelectItem> items,
+    /** iOS only */
     String? defaultValue,
+    /** iOS only */
     String doneText = 'Done',
     String? clearText,
+    /** Android only */
+    String? title,
   }) {
     assert(items.map((e) => e.value).toSet().length == items.length,
         'Values in select items must be unique!');
@@ -51,6 +55,7 @@ class FlutterNativeSelect {
               items.firstWhere((element) => !element.disabled).value,
           'doneText': doneText,
           'clearText': clearText,
+          'title': title,
         }));
   }
 }
