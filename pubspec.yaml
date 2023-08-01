@@ -1,6 +1,6 @@
 name: flutter_native_select
 description: A flutter plugin which can open a native select box.
-version: 1.0.0
+version: 1.0.1
 homepage: https://mietz.app/
 repository: https://github.com/Mietz-GmbH/flutter_native_select
 
